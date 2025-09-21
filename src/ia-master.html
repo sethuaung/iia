@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="FE-Summrized">
+    <meta name="description" content="FELIXENT Internal Audit Training Content for Class">
+    <title>Felixent : Mastering Internal Auditing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .flowchart-step {
+            position: relative;
+            z-index: 1;
+        }
+        .flowchart-connector {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 4rem;
+            height: 2px;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+         .flowchart-connector-down {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 2px;
+            height: 2rem;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .flowchart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .flowchart-step-long {
+            background-color: #90E0EF;
+            color: #004E89;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .flowchart-line {
+            width: 2px;
+            height: 2rem;
+            background-color: #0077B6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50" style="background-color: #ADE8F4;">
+    <!-- Color Palette: Brilliant Blues -->
+    <!-- Narrative Plan: 
+        1. Hero: Define Internal Auditing.
+        2. Pillars: Explain Governance, Risk, and Control.
+        3. Audit Universe: Show types of audits with a Donut Chart.
+        4. ISO Frameworks: Explain internal audit's role.
+        5. Process: Visualize the audit process with an HTML flowchart.
+        6. Key Players: Use a Radar chart to show roles in governance.
+        7. Comparison: Differentiate Internal vs. External audit vs. Accounting with a table.
+        8. Future Trends: Use a Bar Chart for in-demand tech skills.
+        9. Tools: List key tools for tech skills.
+        10. Checklist: Provide a sample audit checklist template.
+        11. Certification: Explain the CIA exam and its parts.
+        12. Conclusion: Summarize the value proposition.
+    -->
+    <!-- Visualization Choices:
+        - Audit Universe -> Goal: Compare -> Donut Chart -> Justification: Shows composition of audit effort. Library: Chart.js (Canvas). NO SVG.
+        - Audit Process -> Goal: Organize -> HTML Flow Chart -> Justification: Shows a sequence clearly without prohibited libraries. Method: HTML/Tailwind. NO SVG/Mermaid.
+        - Key Players -> Goal: Organize/Compare -> Radar Chart -> Justification: Compares multiple entities across shared responsibilities. Library: Chart.js (Canvas). NO SVG.
+        - Future Trends -> Goal: Inform/Rank -> Horizontal Bar Chart -> Justification: Ranks skills by importance effectively. Library: Chart.js (Canvas). NO SVG.
+        - All other sections use styled HTML, typography, and lists for clarity.
+    -->
+    <!-- Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in the output. -->
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#004E89]">Mastering Internal Auditing</h1>
+            <p class="mt-4 text-lg md:text-xl text-[#0077B6]">Your visual guide to the cornerstones of corporate governance and assurance.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8 flex flex-col md:flex-row items-center text-center md:text-left">
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#004E89] mb-3">What is Internal Auditing?</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Internal auditing is an independent, objective assurance and consulting activity designed to add value and improve an organization's operations. It helps an organization accomplish its objectives by bringing a systematic, disciplined approach to evaluate and improve the effectiveness of risk management, control, and governance processes.
+                    </p>
+                </div>
+                <div class="md:w-1/3 mt-6 md:mt-0 flex justify-center items-center">
+                    <div class="text-center">
+                        <span class="text-6xl md:text-8xl font-extrabold text-[#48CAE4]">79%</span>
+                        <p class="text-[#0077B6] font-semibold mt-2">of organizations say internal audit plays a key role in strategic planning.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2">
+                 <div class="text-center mb-6">
+                    <h2 class="text-3xl font-bold text-[#004E89]">The Three Pillars of Assurance</h2>
+                    <p class="text-lg text-[#0077B6] mt-2">Internal audit provides assurance on these three fundamental areas.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🏛️</div>
+                        <h3 class="text-xl font-bold text-[#004E89]">Governance</h3>
+                        <p class="text-gray-600 mt-2">The combination of processes and structures implemented by the board to inform, direct, manage, and monitor the activities of the organization toward the achievement of its objectives.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">⚠️</div>
+                        <h3 class="text-xl font-bold text-[#004E89]">Risk Management</h3>
+                        <p class="text-gray-600 mt-2">A process to identify, assess, manage, and control potential events or situations to provide reasonable assurance regarding the achievement of the organization's objectives.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">✅</div>
+                        <h3 class="text-xl font-bold text-[#004E89]">Control</h3>
+                        <p class="text-gray-600 mt-2">Any action taken by management, the board, and other parties to manage risk and increase the likelihood that established objectives and goals will be achieved.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-center text-[#004E89] mb-2">The Audit Universe: Common Audit Types</h2>
+                 <p class="text-gray-600 text-center mb-4">Internal audit plans often allocate resources across several key domains. This chart shows a typical distribution of audit hours, highlighting the focus on operational efficiency and risk.</p>
+                <div class="chart-container">
+                    <canvas id="auditTypesChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-center text-[#004E89] mb-2">Key Players in Corporate Governance</h2>
+                <p class="text-gray-600 text-center mb-4">This radar chart compares the primary focus areas of the Audit Committee, Internal Audit, and External Audit, revealing their distinct but complementary roles in maintaining organizational integrity.</p>
+                <div class="chart-container">
+                    <canvas id="governanceRolesChart"></canvas>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center text-[#004E89] mb-6">The Internal Audit Process: A Disciplined Approach</h2>
+                <p class="text-gray-600 text-center mb-8 max-w-3xl mx-auto">The internal audit function follows a systematic process to ensure thoroughness and consistency. Each phase is critical, from understanding the risks to verifying that corrective actions are effective.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+
+                    <div class="relative flex flex-col items-center">
+                        <div class="flowchart-step bg-[#90E0EF] text-[#004E89] rounded-full w-32 h-32 flex items-center justify-center text-center p-2 shadow-md">
+                            <span class="font-bold">1. Planning</span>
+                        </div>
+                        <div class="w-full md:hidden flowchart-connector-down bg-[#0077B6]"></div>
+                    </div>
+                     <div class="hidden md:block relative self-center">
+                        <div class="flowchart-connector bg-[#0077B6]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center">
+                        <div class="flowchart-step bg-[#48CAE4] text-white rounded-full w-32 h-32 flex items-center justify-center text-center p-2 shadow-md">
+                            <span class="font-bold">2. Fieldwork & Testing</span>
+                        </div>
+                        <div class="w-full md:hidden flowchart-connector-down bg-[#0077B6]"></div>
+                    </div>
+                     <div class="hidden md:block relative self-center">
+                        <div class="flowchart-connector bg-[#0077B6]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center">
+                        <div class="flowchart-step bg-[#0077B6] text-white rounded-full w-32 h-32 flex items-center justify-center text-center p-2 shadow-md">
+                            <span class="font-bold">3. Reporting</span>
+                        </div>
+                         <div class="w-full md:hidden flowchart-connector-down bg-[#0077B6]"></div>
+                    </div>
+                     <div class="hidden md:block relative self-center">
+                        <div class="flowchart-connector bg-[#0077B6]"></div>
+                    </div>
+
+                    <div class="relative flex flex-col items-center">
+                        <div class="flowchart-step bg-[#004E89] text-white rounded-full w-32 h-32 flex items-center justify-center text-center p-2 shadow-md">
+                            <span class="font-bold">4. Follow-up</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-center text-[#004E89] mb-4">Internal vs. External Audit vs. Accounting</h2>
+                <p class="text-gray-600 text-center mb-6 max-w-3xl mx-auto">This table clarifies the unique roles of these three distinct, yet related, functions within an organization's financial ecosystem.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-[#90E0EF]">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Attribute</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Internal Audit</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">External Audit</th>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Accounting</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Objective</td>
+                                <td class="px-6 py-4 text-gray-600">Improve operations, risk management, and governance.</td>
+                                <td class="px-6 py-4 text-gray-600">Provide an opinion on the fairness of financial statements.</td>
+                                <td class="px-6 py-4 text-gray-600">Record, classify, and summarize financial transactions.</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Focus</td>
+                                <td class="px-6 py-4 text-gray-600">Broad: financial, operational, compliance, IT, and strategic.</td>
+                                <td class="px-6 py-4 text-gray-600">Primarily on financial statements and related internal controls.</td>
+                                <td class="px-6 py-4 text-gray-600">Recording and reporting financial data.</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Independence</td>
+                                <td class="px-6 py-4 text-gray-600">Independent of audited activities, but an employee of the company.</td>
+                                <td class="px-6 py-4 text-gray-600">Completely independent of the company.</td>
+                                <td class="px-6 py-4 text-gray-600">Integral part of the company's daily operations.</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Reporting</td>
+                                <td class="px-6 py-4 text-gray-600">To the Audit Committee and Management.</td>
+                                <td class="px-6 py-4 text-gray-600">To Shareholders and the Board.</td>
+                                <td class="px-6 py-4 text-gray-600">To Management and, through financial statements, to external stakeholders.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+             <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-2xl font-bold text-center text-[#004E89] mb-4">Internal Audit's Role in ISO Frameworks</h2>
+                 <p class="text-gray-600 text-center mb-6">Internal audit plays a crucial role in maintaining and improving systems certified under ISO standards. Auditors ensure that the organization's processes align with the ISO requirements, providing management with assurance and supporting continuous improvement.</p>
+                 <div class="flowchart-container">
+                     <div class="flowchart-step-long mb-4">ISO 9001 (Quality Management)</div>
+                     <div class="flowchart-line"></div>
+                     <div class="flowchart-step-long mb-4">ISO 27001 (Information Security)</div>
+                     <div class="flowchart-line"></div>
+                     <div class="flowchart-step-long">ISO 14001 (Environmental Management)</div>
+                 </div>
+             </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-center text-[#004E89] mb-2">The Future of Auditing: In-Demand Tech Skills</h2>
+                <p class="text-gray-600 text-center mb-6">The audit profession is rapidly evolving. Technology is no longer just a tool but a core competency. This chart highlights the most critical technology skills modern auditors must possess to remain effective and provide deeper insights.</p>
+                <div class="chart-container h-96 md:h-[450px] max-w-4xl">
+                    <canvas id="futureSkillsChart"></canvas>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                 <h2 class="text-2xl font-bold text-center text-[#004E89] mb-4">Tools for the Modern Auditor</h2>
+                 <p class="text-gray-600 text-center mb-6">Mastering the skills mentioned above requires proficiency with key technologies. Here are some of the most useful tools for today's auditors.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                     <div class="bg-gray-50 rounded-lg p-4 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Data Analytics & Visualization</h3>
+                         <ul class="list-disc list-inside mt-2 text-gray-600">
+                             <li><span class="font-medium">Tableau:</span> For powerful, interactive data visualization.</li>
+                             <li><span class="font-medium">Power BI:</span> Microsoft's business analytics service.</li>
+                             <li><span class="font-medium">ACL Analytics:</span> A popular audit-specific data analysis tool.</li>
+                         </ul>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Cybersecurity & IT Controls</h3>
+                         <ul class="list-disc list-inside mt-2 text-gray-600">
+                             <li><span class="font-medium">Nessus:</span> A vulnerability scanner for network security.</li>
+                             <li><span class="font-medium">Wireshark:</span> A network protocol analyzer for traffic monitoring.</li>
+                         </ul>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Automation & AI</h3>
+                         <ul class="list-disc list-inside mt-2 text-gray-600">
+                             <li><span class="font-medium">UiPath:</span> A leading RPA (Robotic Process Automation) tool.</li>
+                             <li><span class="font-medium">Python Libraries:</span> For advanced analytics and custom scripts.</li>
+                         </ul>
+                     </div>
+                     <div class="bg-gray-50 rounded-lg p-4 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Integrated Audit Platforms</h3>
+                         <ul class="list-disc list-inside mt-2 text-gray-600">
+                             <li><span class="font-medium">AuditBoard:</span> All-in-one platform for risk and compliance management.</li>
+                             <li><span class="font-medium">TeamMate+:</span> A widely used audit management system.</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-2xl font-bold text-center text-[#004E89] mb-4">Sample Audit Checklist (Manufacturing Operations)</h2>
+                 <p class="text-gray-600 text-center mb-6">A well-designed checklist is a crucial tool for an internal auditor to ensure consistency and thoroughness. This example provides a framework for an operational audit in a manufacturing setting, covering key areas from raw materials to final product.</p>
+                 <div class="overflow-x-auto">
+                     <table class="min-w-full divide-y divide-gray-200">
+                         <thead class="bg-[#90E0EF]">
+                             <tr>
+                                 <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Audit Area</th>
+                                 <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Question/Criterion</th>
+                                 <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Status</th>
+                                 <th class="px-6 py-3 text-left text-xs font-bold text-[#004E89] uppercase tracking-wider">Notes/Findings</th>
+                             </tr>
+                         </thead>
+                         <tbody class="bg-white divide-y divide-gray-200">
+                             <tr>
+                                 <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Procurement</td>
+                                 <td class="px-6 py-4 text-gray-600">Are purchase orders authorized according to company policy?</td>
+                                 <td class="px-6 py-4 whitespace-nowrap text-gray-600">☐ Yes  ☐ No  ☐ N/A</td>
+                                 <td class="px-6 py-4 text-gray-600"></td>
+                             </tr>
+                             <tr class="bg-blue-50">
+                                 <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Inventory Management</td>
+                                 <td class="px-6 py-4 text-gray-600">Are regular physical inventory counts performed and reconciled?</td>
+                                 <td class="px-6 py-4 whitespace-nowrap text-gray-600">☐ Yes  ☐ No  ☐ N/A</td>
+                                 <td class="px-6 py-4 text-gray-600"></td>
+                             </tr>
+                             <tr>
+                                 <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Production</td>
+                                 <td class="px-6 py-4 text-gray-600">Is the production process aligned with a documented quality control plan?</td>
+                                 <td class="px-6 py-4 whitespace-nowrap text-gray-600">☐ Yes  ☐ No  ☐ N/A</td>
+                                 <td class="px-6 py-4 text-gray-600"></td>
+                             </tr>
+                             <tr class="bg-blue-50">
+                                 <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">Shipping</td>
+                                 <td class="px-6 py-4 text-gray-600">Are shipping documents reconciled to customer orders and invoices?</td>
+                                 <td class="px-6 py-4 whitespace-nowrap text-gray-600">☐ Yes  ☐ No  ☐ N/A</td>
+                                 <td class="px-6 py-4 text-gray-600"></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+            </section>
+
+             <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-2xl font-bold text-center text-[#004E89] mb-4">Professional Certification: The CIA Exam</h2>
+                 <p class="text-gray-600 text-center mb-6">The Certified Internal Auditor (CIA) is the only globally recognized certification for internal auditors. Administered by The IIA and often proctored by Pearson, the exam validates your mastery of the profession's standards and best practices.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                     <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Part 1: Essentials of Internal Auditing</h3>
+                         <p class="text-gray-600 mt-2">Covers the fundamentals of internal audit, including the International Standards for the Professional Practice of Internal Auditing (Standards), governance, risk management, and controls.</p>
+                     </div>
+                     <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Part 2: Practice of Internal Auditing</h3>
+                         <p class="text-gray-600 mt-2">Focuses on managing the internal audit function, establishing the risk-based plan, and conducting audit engagements from planning and fieldwork to communication of results.</p>
+                     </div>
+                     <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
+                         <h3 class="text-lg font-semibold text-[#004E89]">Part 3: Business Knowledge for Internal Auditing</h3>
+                         <p class="text-gray-600 mt-2">Tests your knowledge of business acumen, financial management, and information technology, including data analytics, IT controls, and security.</p>
+                     </div>
+                 </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-[#0077B6]">
+            <p class="text-[#004E89]">&copy; 2025 FELIXENT | Internal Auditing Course Foundation. An overview based on professional standards and literature.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const chartColors = {
+            blue1: '#004E89',
+            blue2: '#0077B6',
+            blue3: '#48CAE4',
+            blue4: '#90E0EF',
+            blue5: '#ADE8F4'
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (typeof str !== 'string' || str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                const word = words[i];
+                const width = currentLine.length + word.length + 1;
+                if (width < maxWidth) {
+                    currentLine += ' ' + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    },
+                    bodyFont: {
+                        size: 14
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        };
+
+        const auditTypesCtx = document.getElementById('auditTypesChart').getContext('2d');
+        new Chart(auditTypesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Operational Audits', 'Financial Audits', 'Compliance Audits', 'IT & Security Audits'],
+                datasets: [{
+                    label: 'Audit Plan Hours Allocation',
+                    data: [45, 25, 15, 15],
+                    backgroundColor: [chartColors.blue1, chartColors.blue3, chartColors.blue2, chartColors.blue4],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipTitleCallback
+            }
+        });
+
+        const governanceRolesCtx = document.getElementById('governanceRolesChart').getContext('2d');
+        new Chart(governanceRolesCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Financial Oversight', 'Risk Management', ['Operational', 'Efficiency'], 'Independence', 'Strategic Advice'],
+                datasets: [{
+                    label: 'Internal Audit',
+                    data: [4, 5, 5, 4, 3],
+                    backgroundColor: 'rgba(72, 202, 228, 0.4)',
+                    borderColor: chartColors.blue3,
+                    pointBackgroundColor: chartColors.blue3,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: chartColors.blue3
+                }, {
+                    label: 'External Audit',
+                    data: [5, 2, 1, 5, 1],
+                    backgroundColor: 'rgba(0, 78, 137, 0.4)',
+                    borderColor: chartColors.blue1,
+                    pointBackgroundColor: chartColors.blue1,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: chartColors.blue1
+                }, {
+                    label: 'Audit Committee',
+                    data: [5, 5, 3, 5, 4],
+                     backgroundColor: 'rgba(0, 119, 182, 0.4)',
+                    borderColor: chartColors.blue2,
+                    pointBackgroundColor: chartColors.blue2,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: chartColors.blue2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#ccc'
+                        },
+                        grid: {
+                            color: '#ddd'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 12
+                            },
+                            color: '#333'
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            stepSize: 1
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 5
+                    }
+                },
+                 ...tooltipTitleCallback,
+            }
+        });
+
+        const futureSkillsCtx = document.getElementById('futureSkillsChart').getContext('2d');
+        const rawLabels = ['Data Analytics & Visualization', 'Cybersecurity & Privacy', 'IT General Controls', 'Cloud Computing & Security', 'AI / Machine Learning Governance'];
+        const wrappedLabels = rawLabels.map(label => wrapLabel(label, 16));
+        new Chart(futureSkillsCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [{
+                    label: 'Importance Ranking',
+                    data: [95, 88, 80, 75, 65],
+                    backgroundColor: [chartColors.blue1, chartColors.blue2, chartColors.blue3, chartColors.blue4, chartColors.blue5],
+                    borderColor: '#fff',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                         grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                       callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = rawLabels[item.dataIndex];
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
