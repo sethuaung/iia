@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="FE-Summrized">
+    <meta name="description" content="FELIXENT Internal Audit Training Content for Class">
+    <meta name="author" content="Mosquito">
+    <link href="contents/favicon.ico" rel="icon">
+    <title>Felixent - Internal Audit Framework</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #581845, #900C3F);
+        }
+        .section-title {
+            color: #581845;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #FFC300;
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .flow-number {
+            background-color: #FF5733;
+            color: white;
+            border-radius: 9999px;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .flow-content {
+            margin-left: 1.5rem;
+        }
+        .flow-connector {
+            width: 2px;
+            height: 3rem;
+            background-color: #FF5733;
+            margin-left: 1.45rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="gradient-bg text-white p-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold">A Framework for Excellence</h1>
+        <p class="text-lg md:text-xl mt-2">Visualizing the Internal Audit & Governance Structure at Olympic Myanmar Apparel Co., Ltd.</p>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="governance" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">Our Mandate for Integrity</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                The Internal Audit function operates with complete independence to provide objective assurance to the highest levels of governance. This structure ensures accountability and drives continuous improvement across all business operations.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#900C3F]">🛡️</div>
+                    <h3 class="text-xl font-bold mt-4">Full Independence</h3>
+                    <p class="text-gray-600 mt-2">Functionally reporting directly to the Board Audit Committee to ensure objectivity.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#C70039]">🔓</div>
+                    <h3 class="text-xl font-bold mt-4">Unrestricted Access</h3>
+                    <p class="text-gray-600 mt-2">Granted full access to all personnel, records, and facilities as mandated by the IA Charter.</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#FF5733]">📜</div>
+                    <h3 class="text-xl font-bold mt-4">IIA Standards</h3>
+                    <p class="text-gray-600 mt-2">Adhering to the International Standards for the Professional Practice of Internal Auditing.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="risk-focus" class="mb-16">
+             <h2 class="text-3xl font-bold text-center mb-8 section-title">A Risk-Focused Approach</h2>
+             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                Our annual audit plan is built on a rigorous risk assessment that prioritizes the most critical areas for our business. This ensures we focus our resources where they can add the most value and provide the greatest protection against potential threats.
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="chart-container h-80 md:h-96 max-w-2xl">
+                    <canvas id="riskRadarChart"></canvas>
+                </div>
+                 <p class="text-center text-gray-500 mt-4 text-sm">
+                    The radar chart illustrates the key areas of focus identified in our FY 2026 risk assessment, with a higher score indicating greater inherent risk and audit priority.
+                </p>
+            </div>
+        </section>
+
+        <section id="process" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">The Four-Phase Audit Lifecycle</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Every audit engagement follows a structured, four-phase methodology. This ensures consistency, quality, and a clear line of communication from initial planning through to the verification of corrective actions.
+            </p>
+            <div class="max-w-2xl mx-auto">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#900C3F]">Planning</h3>
+                        <p class="text-gray-700">Defining audit scope and objectives based on the risk-based Annual Audit Plan.</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#C70039]">Fieldwork</h3>
+                        <p class="text-gray-700">Executing tests using standardized checklists to gather evidence and identify findings.</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                 <div class="flow-step">
+                    <div class="flow-number" style="background-color: #FFC300;">3</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#581845]">Reporting</h3>
+                        <p class="text-gray-700">Communicating findings and securing management's commitment to corrective action plans.</p>
+                    </div>
+                </div>
+                <div class="flow-connector" style="background-color: #FFC300;"></div>
+                <div class="flow-step">
+                    <div class="flow-number" style="background-color: #581845;">4</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#900C3F]">Follow-Up</h3>
+                        <p class="text-gray-700">Tracking all action plans in the Follow-Up Log and verifying their effective implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="insights" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Key Audit Insights (FY 2026 Plan)</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-700">Audit Findings by Risk Rating</h3>
+                    <p class="text-center text-gray-600 mb-6 text-sm">This chart breaks down the anticipated audit findings by their severity. The high concentration of 'High' and 'Medium' risk findings underscores the importance of focusing on core operational and compliance controls.</p>
+                    <div class="chart-container h-80">
+                        <canvas id="findingsByRiskChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-700">Findings by Department</h3>
+                    <p class="text-center text-gray-600 mb-6 text-sm">This visualization highlights which departments have the most identified control weaknesses. It allows management to direct training and process improvement resources to the areas of greatest need.</p>
+                    <div class="chart-container h-80">
+                        <canvas id="findingsByDeptChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compliance-culture" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">Building a Culture of Compliance</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                A strong governance framework is supported by a culture where every employee is empowered to uphold our standards. Our Code of Ethics, mandatory training, and protected reporting channels are the cornerstones of this culture.
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Confidential Reporting Channels</h3>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">Our Whistleblower Policy guarantees non-retaliation for any employee who, in good faith, reports a concern through one of our secure channels.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
+                    <div class="text-center">
+                        <div class="text-5xl">👤</div>
+                        <p class="mt-2 font-semibold">Direct Supervisor</p>
+                    </div>
+                    <div class="text-3xl font-light text-gray-300 hidden md:block">&rarr;</div>
+                    <div class="text-center">
+                        <div class="text-5xl">🏢</div>
+                        <p class="mt-2 font-semibold">Human Resources</p>
+                    </div>
+                     <div class="text-3xl font-light text-gray-300 hidden md:block">&rarr;</div>
+                    <div class="text-center p-4 border-4 border-dashed border-[#FF5733] rounded-lg">
+                        <div class="text-5xl">🔒</div>
+                        <p class="mt-2 font-bold text-[#C70039]">Head of Internal Audit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center">
+        <p>&copy; 2025 Olympic Myanmar Apparel Co., Ltd. | Driving Continuous Improvement Through Insightful Assurance.</p>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabels(label, maxLength) {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const riskRadarCtx = document.getElementById('riskRadarChart').getContext('2d');
+        new Chart(riskRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Contractual Compliance (Warrix)', 'Labor Law & Ethics', 'Inventory & Asset Control', 'Credit & Financial Risk', 'Manufacturing QC', 'IT & Data Security'],
+                datasets: [{
+                    label: 'Inherent Risk Level',
+                    data: [9, 8, 8, 7, 6, 5],
+                    backgroundColor: 'rgba(255, 87, 51, 0.2)',
+                    borderColor: '#FF5733',
+                    pointBackgroundColor: '#FF5733',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#FF5733'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: { 
+                            font: { size: 12, weight: 'bold' },
+                            color: '#581845'
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            stepSize: 2
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+
+        const findingsByRiskCtx = document.getElementById('findingsByRiskChart').getContext('2d');
+        new Chart(findingsByRiskCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['High Risk', 'Medium Risk', 'Low Risk'],
+                datasets: [{
+                    label: 'Findings by Risk',
+                    data: [35, 45, 20],
+                    backgroundColor: ['#C70039', '#FF5733', '#FFC300'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    ...tooltipTitleCallback.plugins
+                }
+            }
+        });
+
+        const findingsByDeptCtx = document.getElementById('findingsByDeptChart').getContext('2d');
+        new Chart(findingsByDeptCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Manufacturing', 'Sales & Finance', 'Inventory & Warehouse', 'IT', 'HR'],
+                datasets: [{
+                    label: 'Number of Findings',
+                    data: [12, 9, 7, 5, 3],
+                    backgroundColor: ['#581845', '#900C3F', '#C70039', '#FF5733', '#FFC300'],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                         grid: { display: false }
+                    },
+                    y: {
+                         grid: { display: true }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                     ...tooltipTitleCallback.plugins
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
