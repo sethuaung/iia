@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ပြည်တွင်းစာရင်းစစ်ဖွဲ့စည်းပုံ - အိုလံပစ်မြန်မာအထည်ချုပ်ကုမ္ပဏီလီမိတက်</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Padauk', 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #581845, #900C3F);
+        }
+        .section-title {
+            color: #581845;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 5px solid #FFC300;
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .flow-number {
+            background-color: #FF5733;
+            color: white;
+            border-radius: 9999px;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .flow-content {
+            margin-left: 1.5rem;
+        }
+        .flow-connector {
+            width: 2px;
+            height: 3rem;
+            background-color: #FF5733;
+            margin-left: 1.45rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="gradient-bg text-white p-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold">ထူးချွန်မှုအတွက် လုပ်ငန်းဖွဲ့စည်းပုံ</h1>
+        <p class="text-lg md:text-xl mt-2">အိုလံပစ်မြန်မာအထည်ချုပ်ကုမ္ပဏီလီမိတက်ရှိ ပြည်တွင်းစာရင်းစစ်နှင့် အုပ်ချုပ်မှုဖွဲ့စည်းပုံအား မြင်သာအောင် ဖော်ပြခြင်း</p>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <section id="governance" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">ကျွန်ုပ်တို့၏ သမာဓိမဏ္ဍိုင်</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                ပြည်တွင်းစာရင်းစစ်လုပ်ငန်းသည် ရည်မှန်းချက်အာမခံချက်ပေးရန်အတွက် အပြည့်အဝ လွတ်လပ်စွာ ဆောင်ရွက်ပြီး အမြင့်ဆုံးအုပ်ချုပ်မှုအဆင့်သို့ တင်ပြပါသည်။ ဤဖွဲ့စည်းပုံသည် တာဝန်ခံမှုကို အာမခံကာ လုပ်ငန်းလည်ပတ်မှုအားလုံးတွင် စဉ်ဆက်မပြတ် တိုးတက်မှုကို တွန်းအားပေးပါသည်။
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#900C3F]">🛡️</div>
+                    <h3 class="text-xl font-bold mt-4">အပြည့်အဝ လွတ်လပ်မှု</h3>
+                    <p class="text-gray-600 mt-2">လုပ်ငန်းဆောင်ရွက်မှုဆိုင်ရာ လွတ်လပ်မှု သေချာစေရန်အတွက် စာရင်းစစ်ကော်မတီသို့ တိုက်ရိုက် တင်ပြခြင်း။</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#C70039]">🔓</div>
+                    <h3 class="text-xl font-bold mt-4">ကန့်သတ်ချက်မရှိ ဝင်ရောက်ခွင့်</h3>
+                    <p class="text-gray-600 mt-2">စာရင်းစစ်လုပ်ငန်း ရည်မှန်းချက်များ ပြီးမြောက်ရန် လိုအပ်သော ဝန်ထမ်း၊ မှတ်တမ်းနှင့် နေရာအားလုံးသို့ ဝင်ရောက်ခွင့်ပေးထားခြင်း။</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="text-5xl font-extrabold text-[#FF5733]">📜</div>
+                    <h3 class="text-xl font-bold mt-4">IIA စံနှုန်းများ</h3>
+                    <p class="text-gray-600 mt-2">လုပ်ငန်းဆောင်ရွက်မှုအားလုံးသည် ပြည်တွင်းစာရင်းစစ်ပညာရှင် လက်တွေ့လုပ်ဆောင်မှုအတွက် နိုင်ငံတကာစံနှုန်းများ (IIA Standards) နှင့် ကိုက်ညီရမည်။</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="risk-focus" class="mb-16">
+             <h2 class="text-3xl font-bold text-center mb-8 section-title">စွန့်စားရမှုအပေါ် အာရုံစိုက်သည့် ချဉ်းကပ်မှု</h2>
+             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                ကျွန်ုပ်တို့၏ နှစ်ပတ်လည်စာရင်းစစ်စီမံကိန်းသည် ကျွန်ုပ်တို့၏ လုပ်ငန်းအတွက် အရေးအကြီးဆုံးနေရာများအား ဦးစားပေးသည့် စွန့်စားရမှုအကဲဖြတ်မှုအပေါ် အခြေခံထားပါသည်။ ၎င်းသည် အရင်းအမြစ်များကို အကြီးဆုံးခြိမ်းခြောက်မှုရှိသည့် နေရာများတွင် အသုံးပြုကြောင်း သေချာစေသည်။
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <div class="chart-container h-80 md:h-96 max-w-2xl">
+                    <canvas id="riskRadarChart"></canvas>
+                </div>
+                 <p class="text-center text-gray-500 mt-4 text-sm">
+                    ဤရေဒါဇယားသည် ၂၀၂၆ ဘဏ္ဍာနှစ် စွန့်စားရမှုအကဲဖြတ်မှုတွင် ဖော်ထုတ်ထားသည့် အဓိကအာရုံစိုက်နယ်ပယ်များကို သရုပ်ဖော်ထားပြီး၊ အဆင့်မြင့်လေ စွန့်စားရမှုနှင့် စာရင်းစစ်ဦးစားပေးမှု ပိုများလေ ဖြစ်သည်။
+                </p>
+            </div>
+        </section>
+
+        <section id="process" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">စာရင်းစစ်ခြင်း၏ အဆင့် (၄) ဆင့်ပါ လုပ်ငန်းစဉ်</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                စာရင်းစစ်လုပ်ငန်း အားလုံးသည် စနစ်တကျ၊ အဆင့် (၄) ဆင့်ပါ လုပ်ငန်းစဉ်အတိုင်း လိုက်နာဆောင်ရွက်ရသည်။ ၎င်းသည် စီမံကိန်းစတင်ခြင်းမှ နောက်ဆုံးပြုပြင်မှု ဆောင်ရွက်ချက်များ စစ်ဆေးခြင်းအထိ ညီညွတ်မှုနှင့် အရည်အသွေးကို သေချာစေပါသည်။
+            </p>
+            <div class="max-w-2xl mx-auto">
+                <div class="flow-step">
+                    <div class="flow-number">၁</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#900C3F]">စီမံကိန်းရေးဆွဲခြင်း</h3>
+                        <p class="text-gray-700">စွန့်စားရမှုအခြေပြု နှစ်ပတ်လည် စာရင်းစစ်စီမံကိန်းအပေါ် အခြေခံ၍ စာရင်းစစ်ပမာဏနှင့် ရည်မှန်းချက်များကို သတ်မှတ်ခြင်း။</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-step">
+                    <div class="flow-number">၂</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#C70039]">ကွင်းဆင်းလုပ်ငန်း</h3>
+                        <p class="text-gray-700">စံပြုထားသော စစ်ဆေးရေးစာရင်းများကို အသုံးပြု၍ စမ်းသပ်စစ်ဆေးမှုများ ပြုလုပ်ကာ သက်သေအထောက်အထားများနှင့် တွေ့ရှိချက်များကို ဖော်ထုတ်ခြင်း။</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                 <div class="flow-step">
+                    <div class="flow-number" style="background-color: #FFC300;">၃</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#581845]">အစီရင်ခံခြင်း</h3>
+                        <p class="text-gray-700">တွေ့ရှိချက်များကို ဆက်သွယ်ပေးပို့ပြီး ပြုပြင်ရေးလုပ်ငန်းစီမံချက်များအတွက် စီမံခန့်ခွဲမှု၏ ကတိကဝတ်ကို ရယူခြင်း။</p>
+                    </div>
+                </div>
+                <div class="flow-connector" style="background-color: #FFC300;"></div>
+                <div class="flow-step">
+                    <div class="flow-number" style="background-color: #581845;">၄</div>
+                    <div class="flow-content">
+                        <h3 class="text-2xl font-bold text-[#900C3F]">နောက်ဆက်တွဲဆောင်ရွက်ခြင်း</h3>
+                        <p class="text-gray-700">လုပ်ငန်းစီမံချက်များအားလုံးကို Follow-Up Log တွင် ခြေရာခံကာ ထိရောက်စွာ အကောင်အထည်ဖော်ခြင်း ရှိမရှိ စစ်ဆေးအတည်ပြုခြင်း။</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="insights" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">အဓိက စာရင်းစစ်ထိုးထွင်းသိမြင်မှုများ (၂၀၂၆ ဘဏ္ဍာနှစ် စီမံကိန်း)</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-700">စွန့်စားရမှု အဆင့်သတ်မှတ်ချက်အလိုက် စာရင်းစစ်တွေ့ရှိချက်များ</h3>
+                    <p class="text-center text-gray-600 mb-6 text-sm">ဤဇယားသည် တွေ့ရှိချက်များအား ၎င်းတို့၏ ပြင်းထန်မှုအလိုက် ခွဲခြားပြသသည်။ 'အန္တရာယ် မြင့်မား' နှင့် 'အန္တရာယ် အလယ်အလတ်' တွေ့ရှိချက်များ အများအပြားပါဝင်မှုသည် အဓိက လုပ်ငန်းလည်ပတ်မှုနှင့် လိုက်နာဆောင်ရွက်မှုဆိုင်ရာ ထိန်းချုပ်မှုများအပေါ် အာရုံစိုက်ရန် အရေးကြီးပုံကို အလေးပေးဖော်ပြသည်။</p>
+                    <div class="chart-container h-80">
+                        <canvas id="findingsByRiskChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-700">ဌာနအလိုက် တွေ့ရှိချက်များ</h3>
+                    <p class="text-center text-gray-600 mb-6 text-sm">ဤမြင်ကွင်းသည် မည်သည့်ဌာနများတွင် ထိန်းချုပ်မှု အားနည်းချက်များ အများဆုံး တွေ့ရှိကြောင်း မီးမောင်းထိုးပြသည်။ ၎င်းသည် စီမံခန့်ခွဲမှုအား အရင်းအမြစ်များကို အကြီးဆုံးလိုအပ်သော နေရာများသို့ လမ်းညွှန်ပေးနိုင်ရန် ကူညီသည်။</p>
+                    <div class="chart-container h-80">
+                        <canvas id="findingsByDeptChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compliance-culture" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 section-title">လိုက်နာဆောင်ရွက်မှု ယဉ်ကျေးမှုကို တည်ဆောက်ခြင်း</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                ခိုင်မာသော အုပ်ချုပ်မှုဖွဲ့စည်းပုံအား ဝန်ထမ်းတိုင်း ကျွန်ုပ်တို့၏ စံနှုန်းများကို ထောက်ခံအားပေးသည့် ယဉ်ကျေးမှုဖြင့် ပံ့ပိုးပေးထားသည်။ ကျွန်ုပ်တို့၏ ကျင့်ဝတ်စည်းကမ်း၊ မဖြစ်မနေ လေ့ကျင့်ရေးနှင့် အကာအကွယ်ပေးထားသော အစီရင်ခံတင်ပြသည့် လမ်းကြောင်းများသည် ဤယဉ်ကျေးမှု၏ အုတ်မြစ်များဖြစ်သည်။
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">လျှို့ဝှက်အစီရင်ခံတင်ပြသည့် လမ်းကြောင်းများ</h3>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">ကျွန်ုပ်တို့၏ လျှို့ဝှက်သတင်းပေးသူ ကာကွယ်ရေးမူဝါဒသည် ရိုးသားသော ရည်ရွယ်ချက်ဖြင့် တင်ပြသည့် ဝန်ထမ်းအားလုံးအတွက် လက်တုံ့ပြန်မှုမပြုရန် အာမခံပါသည်။</p>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
+                    <div class="text-center">
+                        <div class="text-5xl">👤</div>
+                        <p class="mt-2 font-semibold">တိုက်ရိုက်ကြီးကြပ်သူ</p>
+                    </div>
+                    <div class="text-3xl font-light text-gray-300 hidden md:block">&rarr;</div>
+                    <div class="text-center">
+                        <div class="text-5xl">🏢</div>
+                        <p class="mt-2 font-semibold">လူ့စွမ်းအားအရင်းအမြစ် (HR)</p>
+                    </div>
+                     <div class="text-3xl font-light text-gray-300 hidden md:block">&rarr;</div>
+                    <div class="text-center p-4 border-4 border-dashed border-[#FF5733] rounded-lg">
+                        <div class="text-5xl">🔒</div>
+                        <p class="mt-2 font-bold text-[#C70039]">ပြည်တွင်းစာရင်းစစ်ဌာန အကြီးအကဲ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center">
+        <p>&copy; 2025 Olympic Myanmar Apparel Co., Ltd. | ထိုးထွင်းသိမြင်နိုင်သော အာမခံချက်မှတစ်ဆင့် စဉ်ဆက်မပြတ် တိုးတက်မှုကို တွန်းအားပေးခြင်း။</p>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabels(label, maxLength) {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const riskRadarCtx = document.getElementById('riskRadarChart').getContext('2d');
+        new Chart(riskRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['စာချုပ်ပါ လိုက်နာဆောင်ရွက်မှု (Warrix)', 'အလုပ်သမားဥပဒေနှင့် ကျင့်ဝတ်', 'ကုန်ပစ္စည်းစာရင်းနှင့် ပိုင်ဆိုင်မှု ထိန်းချုပ်ခြင်း', 'ချေးငွေနှင့် ဘဏ္ဍာရေးဆိုင်ရာ စွန့်စားရမှု', 'ထုတ်လုပ်မှု အရည်အသွေး ထိန်းချုပ်မှု', 'အိုင်တီနှင့် ဒေတာလုံခြုံရေး'],
+                datasets: [{
+                    label: 'မွေးရာပါ စွန့်စားရမှုအဆင့်',
+                    data: [9, 8, 8, 7, 6, 5],
+                    backgroundColor: 'rgba(255, 87, 51, 0.2)',
+                    borderColor: '#FF5733',
+                    pointBackgroundColor: '#FF5733',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#FF5733'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: { 
+                            font: { size: 12, weight: 'bold' },
+                            color: '#581845'
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            stepSize: 2
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                ...tooltipTitleCallback
+            }
+        });
+
+        const findingsByRiskCtx = document.getElementById('findingsByRiskChart').getContext('2d');
+        new Chart(findingsByRiskCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['အန္တရာယ် မြင့်မား', 'အန္တရာယ် အလယ်အလတ်', 'အန္တရာယ် နည်းပါး'],
+                datasets: [{
+                    label: 'စွန့်စားရမှုအလိုက် တွေ့ရှိချက်များ',
+                    data: [35, 45, 20],
+                    backgroundColor: ['#C70039', '#FF5733', '#FFC300'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    ...tooltipTitleCallback.plugins
+                }
+            }
+        });
+
+        const findingsByDeptCtx = document.getElementById('findingsByDeptChart').getContext('2d');
+        new Chart(findingsByDeptCtx, {
+            type: 'bar',
+            data: {
+                labels: ['ထုတ်လုပ်ရေး', 'ရောင်းချခြင်းနှင့် ဘဏ္ဍာရေး', 'ကုန်ပစ္စည်းစာရင်းနှင့် ဂိုဒေါင်', 'အိုင်တီ', 'လူ့စွမ်းအားအရင်းအမြစ်'],
+                datasets: [{
+                    label: 'တွေ့ရှိချက်အရေအတွက်',
+                    data: [12, 9, 7, 5, 3],
+                    backgroundColor: ['#581845', '#900C3F', '#C70039', '#FF5733', '#FFC300'],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                         grid: { display: false }
+                    },
+                    y: {
+                         grid: { display: true }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                     ...tooltipTitleCallback.plugins
+                }
+            }
+        });
+    </script>
+</body>
+</html>
