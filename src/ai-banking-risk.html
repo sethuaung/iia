@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="FE-Summrized">
+    <meta name="description" content="FELIXENT Internal Audit Training Content for Class">
+    <title>AI in Banking Risk Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f6;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .chart-container-sm {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 450px;
+            }
+            .chart-container-sm {
+                height: 400px;
+                max-height: 450px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#00449E] text-white p-6 shadow-xl sticky top-0 z-10">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-3xl md:text-4xl font-bold">The New Frontier of Risk</h1>
+            <p class="text-lg md:text-xl text-[#CDEEFF]">AI in International Banking & Payment Systems</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <section class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#00449E] mb-4">The Rising Complexity of Global Finance</h2>
+            <p class="text-lg text-gray-700 mb-6">International banking no longer faces just market and credit risks. Today's landscape is a complex, interconnected web of high-velocity threats, from sophisticated cyber attacks and intricate regulatory changes to unprecedented market volatility. This new normal demands a fundamental shift in risk management, moving from reactive checklists to predictive, intelligent systems.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-[#CDEEFF] rounded-lg p-6 shadow-md">
+                    <div class="text-5xl font-bold text-[#00449E]">400%</div>
+                    <p class="text-lg font-semibold text-[#096BDE] mt-2">Increase in cyber attacks on financial institutions since 2020.</p>
+                </div>
+                <div class="bg-[#CDEEFF] rounded-lg p-6 shadow-md">
+                    <div class="text-5xl font-bold text-[#00449E]">750+</div>
+                    <p class="text-lg font-semibold text-[#096BDE] mt-2">Regulatory updates per day globally, creating a massive compliance burden.</p>
+                </div>
+                <div class="bg-[#CDEEFF] rounded-lg p-6 shadow-md">
+                    <div class="text-5xl font-bold text-[#00449E]">&lt;1 min</div>
+                    <p class="text-lg font-semibold text-[#096BDE] mt-2">Time for market-moving news to impact global asset prices.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-[#00449E] mb-3">Composition of Modern Risk Factors</h3>
+                <p class="text-gray-700 mb-4">While traditional credit and market risks remain, operational, cyber, and compliance risks now represent a dominant share of the threat landscape for international banks.</p>
+                <div class="chart-container-sm">
+                    <canvas id="riskDonutChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-4">This chart illustrates the perceived contribution of different risk categories to the overall threat profile in global banking.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-[#00449E] mb-3">The Risk Management Shift</h3>
+                <p class="text-gray-700 mb-4">Artificial Intelligence is the catalyst for moving from historical, rules-based analysis to predictive, real-time risk mitigation.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-full text-left table-auto">
+                        <thead class="bg-[#41AFFF] text-white">
+                            <tr>
+                                <th class="p-3 font-semibold">Technique</th>
+                                <th class="p-3 font-semibold">Traditional</th>
+                                <th class="p-3 font-semibold">Modern (AI-Driven)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-3 font-semibold text-[#096BDE]">Data Source</td>
+                                <td class="p-3">Historical, structured</td>
+                                <td class="p-3">Real-time, unstructured</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-3 font-semibold text-[#096BDE]">Analysis</td>
+                                <td class="p-3">Batch, reactive</td>
+                                <td class="p-3">Continuous, predictive</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-3 font-semibold text-[#096BDE]">Models</td>
+                                <td class="p-3">Static, rules-based</td>
+                                <td class="p-3">Dynamic, self-learning</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-3 font-semibold text-[#096BDE]">Outcome</td>
+                                <td class="p-3">Historical reporting</td>
+                                <td class="p-3">Actionable insights</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <section class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#00449E] mb-4 text-center">Evolution of the AI Toolbox in Finance</h2>
+            <p class="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">The application of AI has evolved from simple automation to complex cognitive reasoning. Early RPA adoption paved the way for ML, which now works in tandem with NLP, Deep Learning, and generative LLMs to understand, predict, and act on risk.</p>
+            <div class="chart-container">
+                <canvas id="aiAdoptionChart"></canvas>
+            </div>
+            <p class="text-center text-gray-600 mt-4">This chart shows the relative adoption and impact levels of different AI technologies within the financial risk sector, from foundational automation to advanced generative models.</p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-[#00449E] mb-3">AI Impact on Core Risk Domains</h3>
+                <p class="text-gray-700 mb-4">AI's impact is not uniform. It has shown exceptional promise in data-intensive areas like cybersecurity and compliance, while also transforming traditional credit and market risk analysis.</p>
+                <div class="chart-container-sm">
+                    <canvas id="riskRadarChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-4">This radar chart compares the relative impact and maturity of AI applications across five critical risk domains.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-[#00449E] mb-3">AI in AML & Cross-Border Payments</h3>
+                <p class="text-gray-700 mb-4">In compliance (AML/CFT) and payments, AI's primary role is to find the "needle in the haystack"—identifying illicit activity and reducing false positives from legacy systems.</p>
+                
+                <h4 class="text-xl font-semibold text-[#096BDE] mb-3">AI-Powered Transaction Monitoring</h4>
+                <div class="flex flex-col items-center space-y-2">
+                    <div class="w-full md:w-3/4 p-3 bg-gray-100 rounded-lg shadow text-center font-medium">Real-Time Transaction Data (SWIFT, ISO20022)</div>
+                    <div class="text-3xl font-bold text-[#096BDE]">↓</div>
+                    <div class="w-full md:w-3/4 p-3 bg-[#CDEEFF] rounded-lg shadow text-center">
+                        <div class="font-bold text-[#00449E]">AI Risk Engine</div>
+                        <div class="text-sm text-gray-700">(ML, NLP, Network Analysis)</div>
+                    </div>
+                    <div class="text-3xl font-bold text-[#096BDE]">↓</div>
+                    <div class="w-full md:w-3/4 p-3 bg-gray-100 rounded-lg shadow text-center font-medium">Network & Behavior Analysis</div>
+                    <div class="text-3xl font-bold text-[#096BDE]">↓</div>
+                    <div class="w-full md:w-3/4 p-3 bg-green-100 rounded-lg shadow text-center font-medium text-green-800">Low-Risk (Cleared)</div>
+                    <div class="w-full md:w-3/4 p-3 bg-red-100 rounded-lg shadow text-center font-medium text-red-800">High-Risk Alert (SAR)</div>
+                </div>
+                 <p class="text-center text-gray-600 mt-4">This diagram shows how AI models process payment data to intelligently segment high-risk alerts from benign transactions.</p>
+            </div>
+        </div>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold text-[#00449E] mb-6 text-center">The AI Balancing Act: Benefits vs. Challenges</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-green-600 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">✔</span> Key Benefits
+                    </h3>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-green-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Predictive Accuracy</h4>
+                                <p class="text-gray-700">Identifies risks before they materialize, moving beyond historical data.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Operational Efficiency</h4>
+                                <p class="text-gray-700">Reduces false positives in AML by up to 90%, saving analyst time.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Real-Time Analysis</h4>
+                                <p class="text-gray-700">Monitors cross-border payments and market sentiment 24/7.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Unstructured Data Insights</h4>
+                                <p class="text-gray-700">Uses NLP/LLMs to analyze news, reports, and sanctions lists for hidden risks.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">✖</span> Key Challenges
+                    </h3>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Model Explainability (XAI)</h4>
+                                <p class="text-gray-700">Regulators require clear explanations for "black box" (DL/LLM) decisions.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Data Quality & Bias</h4>
+                                <p class="text-gray-700">Biased historical data can lead to discriminatory AI models (e.g., credit scoring).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Integration & Legacy Systems</h4>
+                                <p class="text-gray-700">Connecting modern AI platforms with decades-old core banking infrastructure.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-xl mr-3">›</span>
+                            <div>
+                                <h4 class="font-semibold">Adversarial Attacks</h4>
+                                <p class="text-gray-700">Sophisticated actors can "poison" data or exploit AI models.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+            <h2 class="text-3xl font-bold text-[#00449E] mb-4 text-center">Future Outlook: Market Growth</h2>
+            <p class="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">The market for AI in financial risk management is expanding rapidly, driven by regulatory pressure, the need for efficiency, and the increasing volume of complex data. This growth signifies a permanent technological shift in the industry.</p>
+            <div class="chart-container">
+                <canvas id="marketGrowthChart"></canvas>
+            </div>
+            <p class="text-center text-gray-600 mt-4">This line chart projects the market size of AI in the FinTech and Risk Management sector, showing strong expected growth through 2030.</p>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 bg-gray-800 text-gray-300 mt-8">
+        <p>&copy; 2025 Financial Risk Analysis. This infographic is for illustrative purposes.</p>
+        <p class="text-[#004E89]">&copy; 2025 FELIXENT | Internal Auditing Course Foundation. An overview based on professional standards and literature.</p>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                if (!item) return '';
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+
+            const chartColors = {
+                darkBlue: '#00449E',
+                primaryBlue: '#096BDE',
+                mediumBlue: '#41AFFF',
+                lightBlue: '#91D8FF',
+                lightestBlue: '#CDEEFF'
+            };
+
+            const defaultOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#374151',
+                            font: {
+                                size: 14,
+                                family: "'Inter', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: '#000000',
+                        titleColor: '#FFFFFF',
+                        bodyColor: '#FFFFFF',
+                        titleFont: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 12,
+                        cornerRadius: 6,
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#4B5563',
+                            font: {
+                                size: 12,
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#4B5563',
+                            font: {
+                                size: 12,
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        grid: {
+                            color: '#E5E7EB'
+                        }
+                    }
+                }
+            };
+
+            const defaultPieOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#374151',
+                            font: {
+                                size: 14,
+                                family: "'Inter', sans-serif"
+                            },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        ...defaultOptions.plugins.tooltip
+                    }
+                }
+            };
+
+            const defaultRadarOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                     legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#374151',
+                            font: {
+                                size: 14,
+                                family: "'Inter', sans-serif"
+                            },
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        ...defaultOptions.plugins.tooltip
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#D1D5DB'
+                        },
+                        grid: {
+                            color: '#E5E7EB'
+                        },
+                        pointLabels: {
+                            color: '#1F2937',
+                            font: {
+                                size: 14,
+                                family: "'Inter', sans-serif"
+                            }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: '#4B5563'
+                        }
+                    }
+                }
+            };
+
+            const createDonutChart = () => {
+                const ctx = document.getElementById('riskDonutChart');
+                if (!ctx) return;
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Cybersecurity', 'Market Volatility', 'Regulatory', 'Operational', 'Credit Risk'],
+                        datasets: [{
+                            label: 'Risk Composition',
+                            data: [35, 25, 20, 15, 5],
+                            backgroundColor: [
+                                chartColors.darkBlue,
+                                chartColors.primaryBlue,
+                                chartColors.mediumBlue,
+                                chartColors.lightBlue,
+                                chartColors.lightestBlue
+                            ],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: defaultPieOptions
+                });
+            };
+
+            const createHorizontalBarChart = () => {
+                const ctx = document.getElementById('aiAdoptionChart');
+                if (!ctx) return;
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            ['Robotic Process', '(RPA)'],
+                            'Machine Learning (ML)',
+                            ['Natural Language', '(NLP)'],
+                            ['Intelligent Automation', '(RPA + AI)'],
+                            'Deep Learning (DL)',
+                            ['Generative AI', '(LLMs)']
+                        ],
+                        datasets: [{
+                            label: 'Adoption & Impact Score',
+                            data: [90, 85, 70, 65, 50, 40],
+                            backgroundColor: chartColors.primaryBlue,
+                            borderColor: chartColors.darkBlue,
+                            borderWidth: 2,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        ...defaultOptions,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                ...defaultOptions.scales.x,
+                                grid: {
+                                    color: '#E5E7EB'
+                                }
+                            },
+                            y: {
+                                ...defaultOptions.scales.y,
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const createRadarChart = () => {
+                const ctx = document.getElementById('riskRadarChart');
+                if (!ctx) return;
+                new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: [
+                            'Credit Risk', 
+                            'Market Risk', 
+                            'Operational', 
+                            'Cybersecurity', 
+                            ['Compliance', '(AML/CFT)']
+                        ],
+                        datasets: [{
+                            label: 'AI Impact Score (out of 10)',
+                            data: [7, 6, 8, 9, 9],
+                            backgroundColor: 'rgba(9, 107, 222, 0.2)',
+                            borderColor: chartColors.primaryBlue,
+                            pointBackgroundColor: chartColors.primaryBlue,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: chartColors.primaryBlue,
+                            borderWidth: 3
+                        }]
+                    },
+                    options: defaultRadarOptions
+                });
+            };
+
+            const createLineChart = () => {
+                const ctx = document.getElementById('marketGrowthChart');
+                if (!ctx) return;
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                        datasets: [{
+                            label: 'AI in Risk Market Size ($B)',
+                            data: [15, 22, 30, 41, 55, 73, 95],
+                            fill: true,
+                            backgroundColor: 'rgba(65, 175, 255, 0.2)',
+                            borderColor: chartColors.mediumBlue,
+                            tension: 0.4,
+                            borderWidth: 3,
+                            pointBackgroundColor: chartColors.mediumBlue,
+                            pointRadius: 5
+                        }]
+                    },
+                    options: defaultOptions
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                createDonutChart();
+                createHorizontalBarChart();
+                createRadarChart();
+                createLineChart();
+            });
+
+        })();
+    </script>
+</body>
+</html>
